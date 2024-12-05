@@ -9,7 +9,7 @@ class SecretBox {
 }
 
 void main() {
-  var box = SecretBox();
+  SecretBox box = SecretBox();
   box.secret = "Top Secret!"; // Write-only access
   print(box._secret);
 }
