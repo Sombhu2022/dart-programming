@@ -44,8 +44,8 @@ class Rectangle extends Shape {
 
 // Encapsulation: Getters and setters
 class Account {
-  String _accountHolder = '';
-  double _balance = 0.0;
+  String _accountHolder = ''; // privet data
+  double _balance = 0.0; // privet data
 
   String get accountHolder => _accountHolder; // Getter
   set accountHolder(String name) => _accountHolder = name; // Setter
@@ -75,42 +75,6 @@ class Account {
 void displayShapeDetails(Shape shape) {
   print("Shape Area: ${shape.calculateArea().toStringAsFixed(2)}");
   print("Shape Perimeter: ${shape.calculatePerimeter().toStringAsFixed(2)}");
-}
-
-// Mixins example
-mixin Fly {
-  void fly() {
-    print("Flying high!");
-  }
-}
-
-mixin Swim {
-  void swim() {
-    print("Swimming in water!");
-  }
-}
-
-class Bird with Fly {}
-
-class Fish with Swim {}
-
-class Duck with Fly, Swim {}
-
-// Enum example
-enum PaymentStatus { pending, completed, failed }
-
-void displayPaymentStatus(PaymentStatus status) {
-  switch (status) {
-    case PaymentStatus.pending:
-      print("Payment is pending.");
-      break;
-    case PaymentStatus.completed:
-      print("Payment is completed.");
-      break;
-    case PaymentStatus.failed:
-      print("Payment failed. Please try again.");
-      break;
-  }
 }
 
 // Static method and properties
@@ -164,21 +128,6 @@ void main() {
   account.withdraw(200);
   print("Account Holder: ${account.accountHolder}");
   print("Account Balance: \$${account.balance}");
-
-  // Mixins
-  print("\nMixins Example:");
-  Bird bird = Bird();
-  Fish fish = Fish();
-  Duck duck = Duck();
-
-  bird.fly();
-  fish.swim();
-  duck.fly();
-  duck.swim();
-
-  // Enum
-  print("\nEnum Example:");
-  displayPaymentStatus(PaymentStatus.completed);
 
   // Static methods
   print("\nStatic Methods Example:");
